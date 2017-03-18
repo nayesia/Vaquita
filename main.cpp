@@ -10,6 +10,23 @@ using namespace std;
 	char opc[1000]; //validacion de menu
 	int cont=0;
 	Vaca vaquita[ANCHO];
+void Ordenar_burbuja(){
+	Vaca temp;
+	for(int i=0; i<cont ; i++){
+		for(int k=cont-1 ; k>0; k--){
+			if (vaquita[k].getLitros()<vaquita[k-1].getLitros()){
+				temp= vaquita[k];
+				vaquita[k]= vaquita[k-1];
+				vaquita[k-1]=temp;
+			}	
+		}	
+	}
+}
+void Muestra_Vector(){
+	for(int t=0; t<cont; t++ ){
+		cout<<" "<<vaquita[t].getLitros()<<" "<<vaquita[t].getNombre()<<endl;
+	}
+}
 	
 int main(int argc, char** argv ) {
 	string nomb,nomb1;
